@@ -12,7 +12,8 @@ from fastai.text import *
 
 # export_file_url = 'https://www.dropbox.com/s/v6cuuvddq73d1e0/export.pkl?raw=1'
 #export_file_url = 'https://www.dropbox.com/s/dyaiznx8v8uljck/export.pkl?dl=1'
-export_file_url = "https://www.dropbox.com/s/8p84c4893hx726v/export.pkl?dl=1"
+#export_file_url = "https://www.dropbox.com/s/8p84c4893hx726v/export.pkl?dl=1"
+export_file_url = "https://hkustconnect-my.sharepoint.com/:u:/g/personal/nsukiennik_connect_ust_hk/Ec_YYJAKiepEjPLdXCFVR4gBMbHyw7-AYpLk8jaj_51gbw"
 export_file_name = 'export.pkl'
 
 classes = ["business", "law","lifestyle","rel-pol","sports","war","entertainment","misc","science","tech"]
