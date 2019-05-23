@@ -67,7 +67,7 @@ async def postArticleText(request):
  if request.method == 'GET':
     text = request.query_params['text']
     category = callMLAlgo(text)
-    return JSONResponse({category})
+    return JSONResponse({'category' : category})
 
 
 def callMLAlgo(text):
