@@ -1,0 +1,15 @@
+How to hide from the AI surveillance state with a color printout
+
+AI-powered video technology is becoming ubiquitous, tracking our faces and bodies through stores, offices, and public spaces. In some countries the technology constitutes a powerful new layer of policing and government surveillance.
+
+Fortunately, as some researchers from the Belgian university KU Leuven  have just shown, you can often hide from an AI video system with the aid of a simple color printout.
+
+Who said that? The researchers showed that the image they designed can hide a whole person from an AI-powered computer-vision system. They demonstrated it on a popular open-source object recognition system called YoLo(v2).
+
+Hide and seek: The trick could conceivably let crooks hide from security cameras, or offer dissidents a way to dodge government scrutiny. “What our work proves is that it is possible to bypass camera surveillance systems using adversarial patches,” says Wiebe Van Ranst, one of the authors.
+
+Get lost: Van Ranst says it shouldn’t be too hard to adapt the approach to off-the-shelf video surveillance systems. “At the moment we also need to know which detector is in use. What we’d like to do in the future is generate a patch that works on multiple detectors at the same time,” he told MIT Technology Review. “If this works, chances are high that the patch will also work on the detector that is in use in the surveillance system.”
+
+Fool’s errand: The deception demonstrated by the Belgian team exploits what’s known as adversarial machine learning. Most computer vision relies on training a (convolutional) neural network to recognize different things by feeding it examples and tweaking its parameters until it classifies objects correctly. By feeding examples into a trained deep neural net and monitoring the output, it is possible to infer what types of images confuse or fool the system.
+
+Eyes everywhere: The work is significant because AI is increasingly found in everyday surveillance cameras and software. It’s even being used to obviate the need for a checkout line in some experimental stores, including ones operated by Amazon. And in China the technology is emerging as a powerful new means of catching criminals as well as, more troublingly, tracking certain ethnic groups.

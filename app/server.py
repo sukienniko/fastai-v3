@@ -8,8 +8,9 @@ from io import BytesIO
 from fastai import *
 from fastai.vision import *
 
-# export_file_url = 'https://www.dropbox.com/s/v6cuuvddq73d1e0/export.pkl?raw=1'
+
 export_file_url = 'https://www.dropbox.com/s/8p84c4893hx726v/export.pkl?dl=1'
+
 export_file_name = 'export.pkl'
 
 classes = ['business', 'law', 'lifestyle', 'rel-pol', 'sports', 'war', 'entertainment', 'misc', 'science', 'tech']
@@ -48,17 +49,34 @@ loop.close()
 @app.route('/')
 def index(request):
     html = path/'view'/'index.html'
-    return HTMLResponse(html.open().read())
+    return HTMLResponse("Send text data via GET (/getCategory?text=articletext) and see response for result")
 
-@app.route('/analyze', methods=['POST'])
-async def analyze(request):
-    data = await request.form()
-    print(data)
-    img_bytes = await (data['file'].read())
-    print(img_bytes)
-    #img = open_image(BytesIO(img_bytes))
-    prediction = learn.predict(img_bytes)[0]
-    return JSONResponse({'result': str(prediction)})
+# @app.route('/analyze', methods=['POST'])
+# async def analyze(request):
+#     data = await request.form()
+#     print(data)
+#     img_bytes = await (data['file'].read())
+#     print(img_bytes)
+#     #img = open_image(BytesIO(img_bytes))
+
+
+
+#request from react
+@app.route('/getCategory', methods=['GET', 'POST'])
+async def postArticleText(request):
+ if request.method == 'GET':
+    text = request.query_params['text']
+    category = callMLAlgo(text)
+    return JSONResponse({'category' : category})
+
+
+def callMLAlgo(text):
+    prediction = learn.predict(text)[0]
+    return str(prediction)
+
+
+
+
 
 if __name__ == '__main__':
     if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
